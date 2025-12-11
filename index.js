@@ -1,6 +1,10 @@
 const express = require('express');
+const { cors } = require('./middlewares/cors');
 const app = express();
 const port = 3000;
+
+// 应用全局跨域中间件
+app.use(cors);
 
 // 基础路由 - Hello World
 app.get('/', (req, res) => {
